@@ -1,0 +1,16 @@
+MUI_386_OBJECTS= \
+ $O\microdrv.res
+
+386_OBJECTS= \
+ $O\microdrv.res
+
+
+_RES_FILE=$O\microdrv.res
+
+
+
+# lowercased
+BASEDIR=d:\winddk\6000
+OBJECT_ROOT=d:\winddk\6000
+MAKEDIR_LOWERCASE=e:\project\microdrv\gpd\w2k
+OBJ_PATH=e:\project\microdrv\gpd\w2k

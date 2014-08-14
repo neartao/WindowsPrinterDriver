@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window caption="0,0,0,36" size="580,420" sizebox="6,6,6,6" mininfo="80,60">
+  <Font name="微软雅黑" size="12" bold="false" default="true" />
+  <Font name="微软雅黑" size="12" bold="false"/>
+  <Default name="Combo" value="normalimage=&quot;res='118' restype='png' source='0,0,100,22' corner='2,2,20,2'&quot; hotimage=&quot;res='118' restype='png' source='0,22,100,44' corner='2,2,22,2'&quot; focusedimage=&quot;res='118' restype='png' source='0,22,100,44' corner='2,2,22,2'&quot; pushedimage=&quot;res='118' restype='png' source='0,44,100,66' corner='2,2,22,2'&quot;" />
+  <Default name="Button" value="bkimage=&quot;res='115' restype='png' corner='5,5,5,5'&quot; hotimage=&quot;res='116' restype='png' corner='2,3,2,2'&quot; pushedimage=&quot;res='117' restype='png' corner='2,5,2,2'&quot;" />
+  <Default name="VScrollBar" value="button1normalimage=&quot;res='119' restype='png' source='0,0,16,16'&quot; button1hotimage=&quot;res='119' restype='png' source='16,0,32,16,16'&quot; button1pushedimage=&quot;res='119' restype='png' source='32,0,48,16'&quot; button2normalimage=&quot;res='119' restype='png' source='0,32,16,48'&quot; button2hotimage=&quot;res='119' restype='png' source='16,32,32,48'&quot; button2pushedimage=&quot;res='119' restype='png' source='32,32,48,48'&quot; thumbnormalimage=&quot;res='119' restype='png' source='0,48,16,64' corner='0,2,0,2'&quot; thumbhotimage=&quot;res='119' restype='png' source='16,48,32,64' corner='0,2,0,2'&quot; thumbpushedimage=&quot;res='119' restype='png' source='32,48,48,64' corner='0,2,0,2'&quot; bknormalimage=&quot;res='119' restype='png' source='0,16,16,32'&quot;" />
+  <VerticalLayout name="bg" bkimage="res='136' restype='bmp' corner='5,10,5,5'" hole="true">
+    <HorizontalLayout height="36">
+      <HorizontalLayout width="250" inset="2,2,0,0">
+        <Label bkimage="res='139' restype='bmp' mask='#FFFF00FF'" width="32" height="32"/>
+        <Label text="Mirco Unidrv 驱动安装程序" textpadding="10,0,0,0"/>
+      </HorizontalLayout>
+      <HorizontalLayout />
+      <HorizontalLayout width="72">
+        <Button name="minbtn" width="28" height="19" bkimage="" normalimage="res='103' restype='png'" hotimage="res='104' restype='png'" pushedimage="res='105' restype='png'"/>
+        <Button name="closebtn" width="39" height="19" maxheight="19" maxwidth="39"  bkimage="" normalimage="res='112' restype='png'" hotimage="res='113' restype='png'" pushedimage="res='114' restype='png'"/>
+      </HorizontalLayout>
+    </HorizontalLayout>
+
+    <VerticalLayout name="body" padding="2,0,2,5">
+      <HorizontalLayout>
+        <VerticalLayout padding="10,10,0,20" bkimage="res='140' restype='bmp'" width="146" height="303">
+        </VerticalLayout>
+        <VerticalLayout>
+          <HorizontalLayout>
+            <TabLayout name="property" padding="10,10,10,10">
+              <VerticalLayout>
+                <Text showhtml="true" text="欢迎使用Mirco Unidrv 驱动安装程序向导！{n}{n}{x 30}{f 1}该驱动程序安装向导将会在您的计算机上安装Mirco Unidrv 打印机驱动程序，选择“下一步”以继续安装或者“取消”退出安装程序！{/f}{n}{n}{x 20}{f 1}请仔细阅读许可协议:{/f}{n}"/>
+                <HorizontalLayout bkcolor="#FFFFFFFF" bordersize="1" bordercolor="#FF888888"  padding="0,5,0,0" inset="5,5,5,5">
+                  <RichEdit name="license" multiline="true" enabled="true" rich="true" vscrollbar="true" autovscroll="true" />
+                </HorizontalLayout>
+                <Option group="license_group" name="agree_btn" text="同意" textpadding="20,0,0,0" align="left"  normalimage="res='127' restype='png' dest='0,5,15,20'" hotimage="res='128' restype='png' dest='0,5,15,20'" selectedimage="res='129' restype='png' dest='0,5,15,20'" width="240" height="30"/>
+                <Option group="license_group" name="fefuse_btn" selected="true" text="不同意" textpadding="20,0,0,0" align="left"  normalimage="res='127' restype='png' dest='0,5,15,20'" hotimage="res='128' restype='png' dest='0,5,15,20'" selectedimage="res='129' restype='png' dest='0,5,15,20'" width="240" height="30"/>
+              </VerticalLayout>
+              <VerticalLayout>
+                <Label height="30" text="该驱动安装包支持以下操作系统"/>
+                <VerticalLayout padding="50,10,0,0">
+                  <Option group="os_group" name="win2k" text="Window 2000" textpadding="20,0,0,0" align="left"  normalimage="res='127' restype='png' dest='0,5,15,20'" hotimage="res='128' restype='png' dest='0,5,15,20'" selectedimage="res='129' restype='png' dest='0,5,15,20'" width="240" height="30"/>
+                  <Option group="os_group" name="winxp" selected="true" text="Windows XP" textpadding="20,0,0,0" align="left"  normalimage="res='127' restype='png' dest='0,5,15,20'" hotimage="res='128' restype='png' dest='0,5,15,20'" selectedimage="res='129' restype='png' dest='0,5,15,20'" width="240" height="30"/>
+                  <Option group="os_group" name="win2k3s" text="Windows 2003 Server" textpadding="20,0,0,0" align="left"  normalimage="res='127' restype='png' dest='0,5,15,20'" hotimage="res='128' restype='png' dest='0,5,15,20'" selectedimage="res='129' restype='png' dest='0,5,15,20'" width="240" height="30"/>
+                  <Option group="os_group" name="winvista" text="Windows Vista" textpadding="20,0,0,0" align="left"  normalimage="res='127' restype='png' dest='0,5,15,20'" hotimage="res='128' restype='png' dest='0,5,15,20'" selectedimage="res='129' restype='png' dest='0,5,15,20'" width="240" height="30"/>
+                  <Option group="os_group" name="win2k8s" text="Windows Server 2008 " textpadding="20,0,0,0" align="left"  normalimage="res='127' restype='png' dest='0,5,15,20'" hotimage="res='128' restype='png' dest='0,5,15,20'" selectedimage="res='129' restype='png' dest='0,5,15,20'" width="240" height="30"/>
+                  <Option group="os_group" name="win7" text="Windows 7" textpadding="20,0,0,0" align="left"  normalimage="res='127' restype='png' dest='0,5,15,20'" hotimage="res='128' restype='png' dest='0,5,15,20'" selectedimage="res='129' restype='png' dest='0,5,15,20'" width="240" height="30"/>
+                </VerticalLayout>
+                <Label height="30" name="current_os" />
+              </VerticalLayout>
+              <VerticalLayout>
+                <Label height="30" padding="30,0,0,0" text="请选择要安装的端口： "/>
+                <HorizontalLayout padding="50,10,0,0" height="35">
+                  <Label height="24" text="端口："/>
+                  <Combo name="ports" droptype="droplist" height="24" itemtextpadding="5,0,1,1"  normalimage="res='118' restype='png' corner='2,2,20,2'" hotimage="res='118' restype='png' corner='2,2,22,2'" focusedimage="res='118' restype='png' corner='2,2,22,2'" pushedimage="res='118' restype='png' corner='2,2,22,2'" bordercolor="#FF3384D6" bordersize="1">
+                    <ListLabelElement text="COM1" selected="true" height="23"/>
+                    <ListLabelElement text="COM2" height="23"/>
+                    <ListLabelElement text="COM3" height="23"/>
+                    <ListLabelElement text="COM4" height="23"/>
+                    <ListLabelElement text="COM5" height="23"/>
+                    <ListLabelElement text="COM6" height="23"/>
+                    <ListLabelElement text="COM7" height="23"/>
+                    <ListLabelElement text="COM8" height="23"/>
+                    <ListLabelElement text="LPT1" height="23"/>
+                    <ListLabelElement text="LPT2" height="23"/>
+                  </Combo>
+                </HorizontalLayout>
+                <Option name="set_as_default" padding="30,5,0,0" height="35" text="设为默认的打印机" textpadding="20,0,0,0" align="left"  normalimage="res='124' restype='png' dest='0,10,15,25'" hotimage="res='125' restype='png' dest='0,10,15,25'" selectedimage="res='126' restype='png' dest='0,10,15,25'"/>
+                <VerticalLayout name="com_setting">
+                  <Label height="24" padding="30,5,0,0" text="串口设置："/>
+                  
+                  <HorizontalLayout padding="50,5,0,0" height="24">
+                    <Label text="每秒位数(B)："/>
+                    <Combo name="baud_rate" droptype="droplist" height="24" itemtextpadding="5,0,1,1"  normalimage="res='118' restype='png' corner='2,2,20,2'" hotimage="res='118' restype='png' corner='2,2,22,2'" focusedimage="res='118' restype='png' corner='2,2,22,2'" pushedimage="res='118' restype='png' corner='2,2,22,2'" bordercolor="#FF3384D6" bordersize="1">
+                      <ListLabelElement text="1200" height="23"/>
+                      <ListLabelElement text="2400" height="23"/>
+                      <ListLabelElement text="4800" height="23"/>
+                      <ListLabelElement text="9600" selected="true" height="23"/>
+                      <ListLabelElement text="19200" height="23"/>
+                      <ListLabelElement text="38400" height="23"/>
+                      <ListLabelElement text="57600" height="23"/>
+                    </Combo>
+                  </HorizontalLayout>
+
+                  <HorizontalLayout padding="50,5,0,0" height="24">
+                    <Label text="数据位(D)："/>
+                    <Combo name="byte_size" droptype="droplist" height="24" itemtextpadding="5,0,1,1"  normalimage="res='118' restype='png' corner='2,2,20,2'" hotimage="res='118' restype='png' corner='2,2,22,2'" focusedimage="res='118' restype='png' corner='2,2,22,2'" pushedimage="res='118' restype='png' corner='2,2,22,2'" bordercolor="#FF3384D6" bordersize="1">
+                      <ListLabelElement text="5" height="23"/>
+                      <ListLabelElement text="6" height="23"/>
+                      <ListLabelElement text="7" height="23"/>
+                      <ListLabelElement text="8" selected="true" height="23"/>
+                    </Combo>
+                  </HorizontalLayout>
+
+                  <HorizontalLayout padding="50,5,0,0" height="24">
+                    <Label text="奇偶校验(P)："/>
+                    <Combo name="parity" droptype="droplist" height="24" itemtextpadding="5,0,1,1"  normalimage="res='118' restype='png' corner='2,2,20,2'" hotimage="res='118' restype='png' corner='2,2,22,2'" focusedimage="res='118' restype='png' corner='2,2,22,2'" pushedimage="res='118' restype='png' corner='2,2,22,2'" bordercolor="#FF3384D6" bordersize="1">
+                      <ListLabelElement text="无" selected="true" height="23"/>
+                      <ListLabelElement text="奇校验" height="23"/>
+                      <ListLabelElement text="偶校验" height="23"/>
+                      <ListLabelElement text="标记" height="23"/>
+                      <ListLabelElement text="空格" height="23"/>
+                    </Combo>
+                  </HorizontalLayout>
+
+                  <HorizontalLayout padding="50,5,0,0" height="24">
+                    <Label text="停止位(S)："/>
+                    <Combo name="stop_bits" droptype="droplist" height="24" itemtextpadding="5,0,1,1"  normalimage="res='118' restype='png' corner='2,2,20,2'" hotimage="res='118' restype='png' corner='2,2,22,2'" focusedimage="res='118' restype='png' corner='2,2,22,2'" pushedimage="res='118' restype='png' corner='2,2,22,2'" bordercolor="#FF3384D6" bordersize="1">
+                      <ListLabelElement text="1" selected="true" height="23"/>
+                      <ListLabelElement text="1.5" height="23"/>
+                      <ListLabelElement text="2" height="23"/>
+                    </Combo>
+                  </HorizontalLayout>
+
+                  <HorizontalLayout padding="50,5,0,0" height="24">
+                    <Label text="数据流控制(F)："/>
+                    <Combo name="protocal" droptype="droplist" height="24" itemtextpadding="5,0,1,1"  normalimage="res='118' restype='png' corner='2,2,20,2'" hotimage="res='118' restype='png' corner='2,2,22,2'" focusedimage="res='118' restype='png' corner='2,2,22,2'" pushedimage="res='118' restype='png' corner='2,2,22,2'" bordercolor="#FF3384D6" bordersize="1">
+                      <ListLabelElement text="Xon / Xoff" height="23"/>
+                      <ListLabelElement text="硬件" height="23"/>
+                      <ListLabelElement text="无" selected="true" height="23"/>
+                    </Combo>
+                  </HorizontalLayout>
+
+                </VerticalLayout>
+              </VerticalLayout>
+              <VerticalLayout>
+                <VerticalLayout padding="25,5,0,0">
+                  <Label height="30" text="安装进度："/>
+                  <Progress name="progress" bordersize="1" height="24" bordercolor="#FF0000F0"  align="center" foreimage="res='143' restype='png' corner='3,3,3,5'" min="0" max="100" value="20" hor="true" />
+                  <Label height="30"/>
+                  <Label height="30" text="详细信息："/>
+                  <HorizontalLayout bkcolor="#FFFFFFFF" bordersize="1" bordercolor="#FF888888"  padding="0,5,0,0" inset="5,5,5,5">
+                    <List name="progress_list" header="hidden" itemtextpadding="5,0,1,1" vscrollbar="true" hscrollbar="true" >
+                    </List>
+                  </HorizontalLayout>
+                </VerticalLayout>
+              </VerticalLayout>
+            </TabLayout>
+          </HorizontalLayout>
+        </VerticalLayout>
+      </HorizontalLayout>
+      <VerticalLayout height="46">
+        <HorizontalLayout height="20" bkimage="res='141' restype='png'"/>
+          <HorizontalLayout >
+            <Control />
+          <Button name="back_btn" text="上一步" width="90" height="26" />
+          <Control width="30" />
+          <Button name="next_btn" text="下一步" width="90" height="26" />
+          <Control width="30" />
+          <Button name="cancel_btn" text="取消" width="90" height="26" />
+          <Control width="30" />
+        </HorizontalLayout>
+      </VerticalLayout>
+
+    </VerticalLayout>
+
+  </VerticalLayout>
+</Window>

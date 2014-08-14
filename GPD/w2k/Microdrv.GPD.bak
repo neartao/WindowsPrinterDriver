@@ -1,0 +1,574 @@
+*GPDSpecVersion: "1.0"
+*Include: "StdNames.gpd"
+*GPDFileVersion: "3.13"
+*GPDFileName: "Microdrv.GPD"
+*ModelName: "Microdrv"
+*MasterUnits: PAIR(203, 203)
+*ResourceDLL: "Microdrv.Dll"
+*PrinterType: SERIAL
+*Feature: Orientation
+{
+    *rcNameID: =ORIENTATION_DISPLAY
+    *DefaultOption: PORTRAIT
+    *Option: PORTRAIT
+    {
+        *rcNameID: =PORTRAIT_DISPLAY
+    }
+    *Option: LANDSCAPE_CC270
+    {
+        *rcNameID: =LANDSCAPE_DISPLAY
+    }
+}
+*Feature: InputBin
+{
+    *rcNameID: =PAPER_SOURCE_DISPLAY
+    *DefaultOption: Option1
+    *Option: Option1
+    {
+        *rcNameID: 701
+        *OptionID: 701
+    }
+}
+*Feature: Resolution
+{
+    *rcNameID: =RESOLUTION_DISPLAY
+    *DefaultOption: Option1
+    *Option: Option1
+    {
+        *Name: "203 x 203 " =DOTS_PER_INCH
+        *DPI: PAIR(203, 203)
+        *TextDPI: PAIR(203, 203)
+        *PinsPerLogPass: 24
+        *PinsPerPhysPass: 24
+        *SpotDiameter: 100
+        *%*Command: CmdSendBlockData
+        *%{
+               *%*CallbackID: 102
+         *%}        
+        *Command: CmdSendBlockData { *Cmd : "<1D>v0<00>" %l{NumOfDataBytes /24} "<1800>"}
+    }
+}
+*%设置打印机的纸张规格，需要添加新的时，只需添加Option即可， rcNameID和OptionID需要的字符串需要
+*%在rc中定义, PageDimensions, PrintableArea定义纸张规格，
+*%规则就是 48mm的宽度 = 384 / 8
+*Feature: PaperSize
+{
+    *rcNameID: =PAPER_SIZE_DISPLAY
+    *DefaultOption: Option1
+    *Option: Option1
+    {	*% Receipt length 80 x 3276mm 48c
+        *rcNameID: 801
+        *OptionID: 801
+        *PageDimensions: PAIR(640, 26182)
+        *PrintableArea: PAIR(575, 26182)
+        *PrintableOrigin: PAIR(32, 0)
+    }
+    *Option: Option2
+    {	*% A4 length 80 x 297mm 48c
+        *rcNameID: 802
+        *OptionID: 802
+        *PageDimensions: PAIR(640, 2374)
+        *PrintableArea: PAIR(575, 2374)
+        *PrintableOrigin: PAIR(32, 0)
+    }
+    *Option: Option3
+    {	*% B5 length 80 x 257mm 48c
+        *rcNameID: 803
+        *OptionID: 803
+        *PageDimensions: PAIR(640, 2054)
+        *PrintableArea: PAIR(575, 2054)
+        *PrintableOrigin: PAIR(32, 0)
+    }
+    *Option: Option4
+    {	*% 6 in Page 3.14 x 6in 48c
+        *rcNameID: 804
+        *OptionID: 804
+        *PageDimensions: PAIR(640, 1218)
+        *PrintableArea: PAIR(575, 1218)
+        *PrintableOrigin: PAIR(32, 0)
+    }
+    *Option: Option5
+    {	*% Letter length 3.14 x 11in 48c
+        *rcNameID: 805
+        *OptionID: 805
+        *PageDimensions: PAIR(640, 2233)
+        *PrintableArea: PAIR(575, 2233)
+        *PrintableOrigin: PAIR(32, 0)
+    }
+    *Option: Option6
+    {	*% Executive length 3.14x10.5in 48c
+        *rcNameID: 806
+        *OptionID: 806
+        *PageDimensions: PAIR(640, 2132)
+        *PrintableArea: PAIR(575, 2132)
+        *PrintableOrigin: PAIR(32, 0)
+    }
+    *Option: Option7
+    {	*% A4 length 80 x 297mm 42c
+        *rcNameID: 807
+        *OptionID: 807
+        *PageDimensions: PAIR(640, 2374)
+        *PrintableArea: PAIR(503, 2374)
+        *PrintableOrigin: PAIR(68, 0)
+    }
+    *Option: Option8
+    {	*% B5 length 80 x 257mm 42c
+        *rcNameID: 808
+        *OptionID: 808
+        *PageDimensions: PAIR(640, 2054)
+        *PrintableArea: PAIR(503, 2054)
+        *PrintableOrigin: PAIR(68, 0)
+    }
+    *Option: Option9
+    {	*% 6 in Page 3.14 x 6in 42c
+        *rcNameID: 809
+        *OptionID: 809
+        *PageDimensions: PAIR(640, 1218)
+        *PrintableArea: PAIR(503, 1218)
+        *PrintableOrigin: PAIR(68, 0)
+    }
+    *Option: Option10
+    {	*% Letter length 3.14 x 11in 42c
+        *rcNameID: 810
+        *OptionID: 810
+        *PageDimensions: PAIR(640, 2233)
+        *PrintableArea: PAIR(503, 2233)
+        *PrintableOrigin: PAIR(68, 0)
+    }
+    *Option: Option11
+    {	*% Executive length 3.14x10.5in 42c
+        *rcNameID: 811
+        *OptionID: 811
+        *PageDimensions: PAIR(640, 2132)
+        *PrintableArea: PAIR(503, 2132)
+        *PrintableOrigin: PAIR(68, 0)
+    }
+    *Option: Option12
+    {	*% Receipt length 80 x 3276mm 42c
+        *rcNameID: 812
+        *OptionID: 812
+        *PageDimensions: PAIR(640, 26182)
+        *PrintableArea: PAIR(503, 26182)
+        *PrintableOrigin: PAIR(68, 0)
+    }
+    *Option: Option13
+    {	*% A4 length 58 x 297mm 36c
+        *rcNameID: 813
+        *OptionID: 813
+        *PageDimensions: PAIR(464, 2374)
+        *PrintableArea: PAIR(431, 2374)
+        *PrintableOrigin: PAIR(16, 0)
+    }
+    *Option: Option14
+    {	*% B5 length 58 x 257mm 36c
+        *rcNameID: 814
+        *OptionID: 814
+        *PageDimensions: PAIR(464, 2054)
+        *PrintableArea: PAIR(431, 2054)
+        *PrintableOrigin: PAIR(16, 0)
+    }
+    *Option: Option15
+    {	*% 6 in Page 2.28 x 6in 36c
+        *rcNameID: 815
+        *OptionID: 815
+        *PageDimensions: PAIR(464, 1218)
+        *PrintableArea: PAIR(431, 1218)
+        *PrintableOrigin: PAIR(16, 0)
+    }
+    *Option: Option16
+    {	*% Letter length 2.28 x 11in 36c
+        *rcNameID: 816
+        *OptionID: 816
+        *PageDimensions: PAIR(464, 2233)
+        *PrintableArea: PAIR(431, 2233)
+        *PrintableOrigin: PAIR(16, 0)
+    }
+    *Option: Option17
+    {	*% Executive length 2.28x10.5in 36c
+        *rcNameID: 817
+        *OptionID: 817
+        *PageDimensions: PAIR(464, 2132)
+        *PrintableArea: PAIR(431, 2132)
+        *PrintableOrigin: PAIR(16, 0)
+    }
+    *Option: Option18
+    {	*% Receipt length 58 x 3276mm 36c
+        *rcNameID: 818
+        *OptionID: 818
+        *PageDimensions: PAIR(464, 26182)
+        *PrintableArea: PAIR(431, 26182)
+        *PrintableOrigin: PAIR(16, 0)
+    }
+    *Option: Option19
+    {	*% A4 length 58 x 297mm 30c
+        *rcNameID: 819
+        *OptionID: 819
+        *PageDimensions: PAIR(464, 2374)
+        *PrintableArea: PAIR(359, 2374)
+        *PrintableOrigin: PAIR(16, 0)
+    }
+    *Option: Option20
+    {	*% B5 length 58 x 257mm 30c
+        *rcNameID: 820
+        *OptionID: 820
+        *PageDimensions: PAIR(464, 2054)
+        *PrintableArea: PAIR(359, 2054)
+        *PrintableOrigin: PAIR(16, 0)
+    }
+    *Option: Option21
+    {	*% 6 in Page 2.28 x 6in 30c
+        *rcNameID: 821
+        *OptionID: 821
+        *PageDimensions: PAIR(464, 1218)
+        *PrintableArea: PAIR(359, 1218)
+        *PrintableOrigin: PAIR(16, 0)
+    }
+    *Option: Option22
+    {	*% Letter length 2.28 x 11in 30c
+        *rcNameID: 822
+        *OptionID: 822
+        *PageDimensions: PAIR(464, 2233)
+        *PrintableArea: PAIR(359, 2233)
+        *PrintableOrigin: PAIR(16, 0)
+    }
+    *Option: Option23
+    {	*% Executive length 2.28x10.5in 30c
+        *rcNameID: 823
+        *OptionID: 823
+        *PageDimensions: PAIR(464, 2132)
+        *PrintableArea: PAIR(359, 2132)
+        *PrintableOrigin: PAIR(16, 0)
+    }
+    *Option: Option24
+    {	*% Receipt length 58 x 3276mm 30c
+        *rcNameID: 824
+        *OptionID: 824
+        *PageDimensions: PAIR(464, 26182)
+        *PrintableArea: PAIR(359, 26182)
+        *PrintableOrigin: PAIR(16, 0)
+    }
+    *Option: CUSTOMSIZE
+    {
+        *rcNameID: =USER_DEFINED_SIZE_DISPLAY
+        *MinSize: PAIR(20, 20)
+        *MaxSize: PAIR(640, 32767)
+        *MaxPrintableWidth: 575
+        *MinLeftMargin: 16
+        *CenterPrintable?: FALSE
+    }
+}
+*Feature: MediaType
+{
+    *rcNameID: =MEDIA_TYPE_DISPLAY
+    *DefaultOption: Option1
+    *Option: Option1
+    {
+        *rcNameID: 280
+        *OptionID: 280
+    }
+    *Option: Option2
+    {
+        *rcNameID: 281
+        *OptionID: 281
+        *Command: CmdSelect
+        {
+            *Order: DOC_SETUP.2
+            *Cmd: "<1B>p<008080>"
+        }
+    }
+    *Option: Option3
+    {
+        *rcNameID: 282
+        *OptionID: 282
+        *Command: CmdSelect
+        {
+            *Order: DOC_SETUP.2
+            *Cmd: "<1B>p<018080>"
+        }
+    }
+    *Option: Option4
+    {
+        *rcNameID: 283
+        *OptionID: 283
+        *Command: CmdSelect
+        {
+            *Order: DOC_SETUP.2
+            *Cmd: "<1B>p<0080801B>p<018080>"
+        }
+    }
+    *Option: Option5
+    {
+        *rcNameID: 284
+        *OptionID: 284
+        *Command: CmdSelect
+        {
+            *Order: JOB_FINISH.3
+            *Cmd: "<1B>q<008080>"
+        }
+    }
+    *Option: Option6
+    {
+        *rcNameID: 285
+        *OptionID: 285
+        *Command: CmdSelect
+        {
+            *Order: JOB_FINISH.3
+            *Cmd: "<1B>q<018080>"
+        }
+    }
+    *Option: Option7
+    {
+        *rcNameID: 286
+        *OptionID: 286
+        *Command: CmdSelect
+        {
+            *Order: JOB_FINISH.3
+            *Cmd: "<1B>q<0080801B>q<018080>"
+        }
+    }
+}
+
+*Feature: PrintLogo
+{
+    *rcNameID:  300
+    *DefaultOption: Option1
+    *Option: Option1
+    {
+        *rcNameID: 290
+    }
+    *Option: Option2
+    {
+        *rcNameID: 291
+        *Command: CmdSelect
+        {
+            *Order: DOC_SETUP.3
+            *Cmd: "<1B>a<011C>p<0100>"
+        }
+    }
+    *Option: Option3
+    {
+        *rcNameID: 292
+        *Command: CmdSelect
+        {
+            *Order: DOC_SETUP.3
+            *Cmd: "<1B>a<011C>p<0200>"
+        }
+    }
+    *Option: Option4
+    {
+        *rcNameID: 293
+        *Command: CmdSelect
+        {
+            *Order: DOC_SETUP.3
+            *Cmd: "<1B>a<011C>p<0300>"
+        }
+    }
+    *Option: Option5
+    {
+        *rcNameID: 294
+        *Command: CmdSelect
+        {
+            *Order: DOC_SETUP.3
+            *Cmd: "<1B>a<011C>p<0400>"
+        }
+    }
+    *Option: Option6
+    {
+        *rcNameID: 295
+        *Command: CmdSelect
+        {
+            *Order: DOC_SETUP.3
+            *Cmd: "<1B>a<011C>p<0500>"
+        }
+    }
+    *Option: Option7
+    {
+        *rcNameID: 296
+        *Command: CmdSelect
+        {
+            *Order: DOC_SETUP.3
+            *Cmd: "<1B>a<011C>p<0600>"
+        }
+    }
+    *Option: Option8
+    {
+        *rcNameID: 297
+        *Command: CmdSelect
+        {
+            *Order: DOC_SETUP.3
+            *Cmd: "<1B>a<011C>p<0700>"
+        }
+    }
+    *Option: Option9
+    {
+        *rcNameID: 298
+        *Command: CmdSelect
+        {
+            *Order: DOC_SETUP.3
+            *Cmd: "<1B>a<011C>p<0800>"
+        }
+    }
+    *Option: Option10
+    {
+        *rcNameID: 299
+        *Command: CmdSelect
+        {
+            *Order: DOC_SETUP.3
+            *Cmd: "<1B>a<011C>p<0900>"
+        }
+    }
+}
+*Feature: Buzzer
+{
+    *rcNameID: 400
+    *DefaultOption: Option1
+    *Option: Option1
+    {
+        *rcNameID: 401
+    }
+    *Option: Option2
+    {
+        *rcNameID: 402
+        *Command: CmdSelect
+        {
+            *Order: JOB_FINISH.1
+            *Cmd: "<1B420301>"
+        }
+    }
+    *Option: Option3
+    {
+        *rcNameID: 403
+        *Command: CmdSelect
+        {
+            *Order: PAGE_SETUP.1
+            *Cmd: "<1B420301>"
+        }
+    }
+}
+
+*Feature: Cutter
+{
+    *rcNameID: 600
+    *DefaultOption: Option1
+    *Option: Option1
+    {
+        *rcNameID: 601
+        *Command: CmdSelect
+        {
+            *Order: JOB_FINISH.2
+            *Cmd: "<1D564200>"
+        }
+    }
+    *Option: Option2
+    {
+        *rcNameID: 602
+        *Command: CmdSelect
+        {
+            *Order: JOB_FINISH.2
+            *Cmd: "<1D564100>"
+        }
+    }
+
+    *Option: Option3
+    {
+        *rcNameID: 603
+    }
+}
+
+*Feature: Halftone
+{
+    *rcNameID: =HALFTONING_DISPLAY
+    *DefaultOption: HT_PATSIZE_AUTO
+    *Option: HT_PATSIZE_AUTO
+    {
+        *rcNameID: =HT_AUTO_SELECT_DISPLAY
+    }
+    *Option: HT_PATSIZE_SUPERCELL_M
+    {
+        *rcNameID: =HT_SUPERCELL_DISPLAY
+    }
+    *Option: HT_PATSIZE_6x6_M
+    {
+        *rcNameID: =HT_DITHER6X6_DISPLAY
+    }
+    *Option: HT_PATSIZE_8x8_M
+    {
+        *rcNameID: =HT_DITHER8X8_DISPLAY
+    }
+}
+*Feature: PaperType
+{
+    *rcNameID: 260
+    *FeatureType: DOC_PROPERTY
+    *DefaultOption: RECEIPT
+    *Option: RECEIPT
+    {
+        *rcNameID: 261
+    }
+    *Option: TICKET
+    {
+        *rcNameID: 262
+    }
+}
+*switch: PaperType
+{
+    *case: TICKET
+    {
+        *EjectPageWithFF?: FALSE
+    }
+    *default
+    {
+        *EjectPageWithFF?: TRUE
+    }
+}
+*Command: CmdStartDoc
+{
+    *Order: DOC_SETUP.0
+    *Cmd: "<1B>@<1D>P<CBCB1B>R<001B>t<09><1D>b<01>"
+}
+*Command: CmdEndJob
+{
+    *Order: JOB_FINISH.5
+    *Cmd: "<000000>"
+}
+*RotateCoordinate?: FALSE
+*RotateRaster?: FALSE
+*RotateFont?: FALSE
+*switch: Orientation
+{
+    *case: PORTRAIT
+    {
+        *TextCaps: LIST(TC_OP_CHARACTER,TC_EA_DOUBLE,TC_UA_ABLE,TC_IA_ABLE)
+    }
+    *case: LANDSCAPE_CC270
+    {
+        *TextCaps: LIST()
+    }
+}
+*CursorXAfterCR: AT_CURSOR_X_ORIGIN
+*YMoveAttributes: LIST(SEND_CR_FIRST)
+*XMoveThreshold: 0
+*YMoveThreshold: *
+*XMoveUnit: 203
+*YMoveUnit: 203
+*%*Command: CmdXMoveAbsolute
+*%{
+    *%*CallbackID : 100
+    *%*Params : LIST(DestX)
+*%}
+*%*Command: CmdYMoveRelDown
+*%{
+    *%*CallbackID : 101
+    *%*Params : LIST(DestYRel)
+*%}
+*Command: CmdXMoveAbsolute { *Cmd : "<001B>$" %l{DestX } }
+*Command: CmdYMoveRelDown {  *Cmd : "<001B>J" %c[0,255]{max_repeat( DestYRel )} }
+
+*Command: CmdCR { *Cmd : "<000D>" }
+*Command: CmdLF { *Cmd : "<000A>" }
+*Command: CmdFF { *Cmd : "<00>" }
+*OutputDataFormat: V_BYTE
+*OptimizeLeftBound?: FALSE
+*CursorXAfterSendBlockData: AT_GRXDATA_END
+*CursorYAfterSendBlockData: AUTO_INCREMENT
+*DefaultCTT: 0

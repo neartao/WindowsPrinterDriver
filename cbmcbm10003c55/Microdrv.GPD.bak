@@ -1,0 +1,393 @@
+*GPDSpecVersion: "1.0"
+*Include: "StdNames.gpd"
+*GPDFileVersion: "1.000"
+*GPDFileName: "Microdrv.GPD"
+*ModelName: "Microdrv"
+*MasterUnits: PAIR(203, 203)
+*ResourceDLL: "Microdrv.Dll"
+*PrinterType: SERIAL
+*Feature: Orientation
+{
+    *rcNameID: =ORIENTATION_DISPLAY
+    *DefaultOption: PORTRAIT
+    *Option: PORTRAIT
+    {
+        *rcNameID: =PORTRAIT_DISPLAY
+    }
+    *Option: LANDSCAPE_CC270
+    {
+        *rcNameID: =LANDSCAPE_DISPLAY
+    }
+}
+*Feature: InputBin
+{
+    *rcNameID: =PAPER_SOURCE_DISPLAY
+    *DefaultOption: Option1
+    *Option: Option1
+    {
+        *rcNameID: 296
+        *OptionID: 296
+    }
+}
+*Feature: Resolution
+{
+    *rcNameID: =RESOLUTION_DISPLAY
+    *DefaultOption: 203dpi_24lines
+    *Option: 203dpi_24lines
+    {
+        *Name: "203 x 203 " =DOTS_PER_INCH
+        *DPI: PAIR(203, 203)
+        *TextDPI: PAIR(203, 203)
+        *PinsPerLogPass: 24
+        *PinsPerPhysPass: 24
+        *SpotDiameter: 100
+        *Command: CmdSendBlockData
+        {
+               *CallbackID: 102
+         }
+    }
+}
+*Feature: PaperSize
+{
+    *rcNameID: =PAPER_SIZE_DISPLAY
+    *DefaultOption: Option1
+    *Option: Option1
+    {	*% Receipt length 80 x 3276mm 48c
+        *rcNameID: 258
+        *OptionID: 258
+        *PageDimensions: PAIR(640, 26182)
+        *PrintableArea: PAIR(575, 26182)
+        *PrintableOrigin: PAIR(32, 0)
+    }
+    *Option: Option2
+    {	*% A4 length 80 x 297mm 48c
+        *rcNameID: 259
+        *OptionID: 259
+        *PageDimensions: PAIR(640, 2374)
+        *PrintableArea: PAIR(575, 2374)
+        *PrintableOrigin: PAIR(32, 0)
+    }
+    *Option: Option3
+    {	*% B5 length 80 x 257mm 48c
+        *rcNameID: 260
+        *OptionID: 260
+        *PageDimensions: PAIR(640, 2054)
+        *PrintableArea: PAIR(575, 2054)
+        *PrintableOrigin: PAIR(32, 0)
+    }
+    *Option: Option4
+    {	*% 6 in Page 3.14 x 6in 48c
+        *rcNameID: 261
+        *OptionID: 261
+        *PageDimensions: PAIR(640, 1218)
+        *PrintableArea: PAIR(575, 1218)
+        *PrintableOrigin: PAIR(32, 0)
+    }
+    *Option: Option5
+    {	*% Letter length 3.14 x 11in 48c
+        *rcNameID: 262
+        *OptionID: 262
+        *PageDimensions: PAIR(640, 2233)
+        *PrintableArea: PAIR(575, 2233)
+        *PrintableOrigin: PAIR(32, 0)
+    }
+    *Option: Option6
+    {	*% Executive length 3.14x10.5in 48c
+        *rcNameID: 263
+        *OptionID: 263
+        *PageDimensions: PAIR(640, 2132)
+        *PrintableArea: PAIR(575, 2132)
+        *PrintableOrigin: PAIR(32, 0)
+    }
+    *Option: Option7
+    {	*% A4 length 80 x 297mm 42c
+        *rcNameID: 264
+        *OptionID: 264
+        *PageDimensions: PAIR(640, 2374)
+        *PrintableArea: PAIR(503, 2374)
+        *PrintableOrigin: PAIR(68, 0)
+    }
+    *Option: Option8
+    {	*% B5 length 80 x 257mm 42c
+        *rcNameID: 265
+        *OptionID: 265
+        *PageDimensions: PAIR(640, 2054)
+        *PrintableArea: PAIR(503, 2054)
+        *PrintableOrigin: PAIR(68, 0)
+    }
+    *Option: Option9
+    {	*% 6 in Page 3.14 x 6in 42c
+        *rcNameID: 266
+        *OptionID: 266
+        *PageDimensions: PAIR(640, 1218)
+        *PrintableArea: PAIR(503, 1218)
+        *PrintableOrigin: PAIR(68, 0)
+    }
+    *Option: Option10
+    {	*% Letter length 3.14 x 11in 42c
+        *rcNameID: 267
+        *OptionID: 267
+        *PageDimensions: PAIR(640, 2233)
+        *PrintableArea: PAIR(503, 2233)
+        *PrintableOrigin: PAIR(68, 0)
+    }
+    *Option: Option11
+    {	*% Executive length 3.14x10.5in 42c
+        *rcNameID: 268
+        *OptionID: 268
+        *PageDimensions: PAIR(640, 2132)
+        *PrintableArea: PAIR(503, 2132)
+        *PrintableOrigin: PAIR(68, 0)
+    }
+    *Option: Option12
+    {	*% Receipt length 80 x 3276mm 42c
+        *rcNameID: 269
+        *OptionID: 269
+        *PageDimensions: PAIR(640, 26182)
+        *PrintableArea: PAIR(503, 26182)
+        *PrintableOrigin: PAIR(68, 0)
+    }
+    *Option: Option13
+    {	*% A4 length 58 x 297mm 36c
+        *rcNameID: 270
+        *OptionID: 270
+        *PageDimensions: PAIR(464, 2374)
+        *PrintableArea: PAIR(431, 2374)
+        *PrintableOrigin: PAIR(16, 0)
+    }
+    *Option: Option14
+    {	*% B5 length 58 x 257mm 36c
+        *rcNameID: 271
+        *OptionID: 271
+        *PageDimensions: PAIR(464, 2054)
+        *PrintableArea: PAIR(431, 2054)
+        *PrintableOrigin: PAIR(16, 0)
+    }
+    *Option: Option15
+    {	*% 6 in Page 2.28 x 6in 36c
+        *rcNameID: 272
+        *OptionID: 272
+        *PageDimensions: PAIR(464, 1218)
+        *PrintableArea: PAIR(431, 1218)
+        *PrintableOrigin: PAIR(16, 0)
+    }
+    *Option: Option16
+    {	*% Letter length 2.28 x 11in 36c
+        *rcNameID: 273
+        *OptionID: 273
+        *PageDimensions: PAIR(464, 2233)
+        *PrintableArea: PAIR(431, 2233)
+        *PrintableOrigin: PAIR(16, 0)
+    }
+    *Option: Option17
+    {	*% Executive length 2.28x10.5in 36c
+        *rcNameID: 274
+        *OptionID: 274
+        *PageDimensions: PAIR(464, 2132)
+        *PrintableArea: PAIR(431, 2132)
+        *PrintableOrigin: PAIR(16, 0)
+    }
+    *Option: Option18
+    {	*% Receipt length 58 x 3276mm 36c
+        *rcNameID: 275
+        *OptionID: 275
+        *PageDimensions: PAIR(464, 26182)
+        *PrintableArea: PAIR(431, 26182)
+        *PrintableOrigin: PAIR(16, 0)
+    }
+    *Option: Option19
+    {	*% A4 length 58 x 297mm 30c
+        *rcNameID: 276
+        *OptionID: 276
+        *PageDimensions: PAIR(464, 2374)
+        *PrintableArea: PAIR(359, 2374)
+        *PrintableOrigin: PAIR(16, 0)
+    }
+    *Option: Option20
+    {	*% B5 length 58 x 257mm 30c
+        *rcNameID: 277
+        *OptionID: 277
+        *PageDimensions: PAIR(464, 2054)
+        *PrintableArea: PAIR(359, 2054)
+        *PrintableOrigin: PAIR(16, 0)
+    }
+    *Option: Option21
+    {	*% 6 in Page 2.28 x 6in 30c
+        *rcNameID: 278
+        *OptionID: 278
+        *PageDimensions: PAIR(464, 1218)
+        *PrintableArea: PAIR(359, 1218)
+        *PrintableOrigin: PAIR(16, 0)
+    }
+    *Option: Option22
+    {	*% Letter length 2.28 x 11in 30c
+        *rcNameID: 279
+        *OptionID: 279
+        *PageDimensions: PAIR(464, 2233)
+        *PrintableArea: PAIR(359, 2233)
+        *PrintableOrigin: PAIR(16, 0)
+    }
+    *Option: Option23
+    {	*% Executive length 2.28x10.5in 30c
+        *rcNameID: 280
+        *OptionID: 280
+        *PageDimensions: PAIR(464, 2132)
+        *PrintableArea: PAIR(359, 2132)
+        *PrintableOrigin: PAIR(16, 0)
+    }
+    *Option: Option24
+    {	*% Receipt length 58 x 3276mm 30c
+        *rcNameID: 281
+        *OptionID: 281
+        *PageDimensions: PAIR(464, 26182)
+        *PrintableArea: PAIR(359, 26182)
+        *PrintableOrigin: PAIR(16, 0)
+    }
+    *Option: CUSTOMSIZE
+    {
+        *rcNameID: =USER_DEFINED_SIZE_DISPLAY
+        *MinSize: PAIR(20, 20)
+        *MaxSize: PAIR(640, 32767)
+        *MaxPrintableWidth: 575
+        *MinLeftMargin: 16
+        *CenterPrintable?: FALSE
+    }
+}
+*Feature: Halftone
+{
+    *rcNameID: =HALFTONING_DISPLAY
+    *DefaultOption: HT_PATSIZE_AUTO
+    *Option: HT_PATSIZE_AUTO
+    {
+        *rcNameID: =HT_AUTO_SELECT_DISPLAY
+    }
+    *Option: HT_PATSIZE_SUPERCELL_M
+    {
+        *rcNameID: =HT_SUPERCELL_DISPLAY
+    }
+    *Option: HT_PATSIZE_6x6_M
+    {
+        *rcNameID: =HT_DITHER6X6_DISPLAY
+    }
+    *Option: HT_PATSIZE_8x8_M
+    {
+        *rcNameID: =HT_DITHER8X8_DISPLAY
+    }
+}
+*Feature: PaperType
+{
+    *rcNameID: 400
+    *FeatureType: DOC_PROPERTY
+    *DefaultOption: RECEIPT
+    *Option: RECEIPT
+    {
+        *rcNameID: 296
+    }
+    *Option: TICKET
+    {
+        *rcNameID: 402
+    }
+}
+*switch: PaperType
+{
+    *case: TICKET
+    {
+        *EjectPageWithFF?: FALSE
+    }
+    *default
+    {
+        *EjectPageWithFF?: TRUE
+    }
+}
+*Feature: PrinterFontFullPrint
+{
+    *rcNameID: 439
+    *FeatureType: DOC_PROPERTY
+    *DefaultOption: CHAR1DEC
+*%    *DefaultOption: FULLCHAR
+    *Option: CHAR1DEC
+    {
+        *rcNameID: 441
+    }
+*%    *Option: FULLCHAR
+*%    {
+*%        *rcNameID: 440
+*%    }
+}
+*Command: CmdStartDoc
+{
+    *Order: DOC_SETUP.0
+    *Cmd: "<1B>@<1D>P<CBCB1B>R<001B>t<09><1D>b<01>"
+}
+*Command: CmdEndJob
+{
+    *Order: JOB_FINISH.0
+    *Cmd: "<000000>"
+}
+*RotateCoordinate?: FALSE
+*RotateRaster?: FALSE
+*RotateFont?: FALSE
+*switch: Orientation
+{
+    *case: PORTRAIT
+    {
+        *TextCaps: LIST(TC_OP_CHARACTER,TC_EA_DOUBLE,TC_UA_ABLE,TC_IA_ABLE)
+    }
+    *case: LANDSCAPE_CC270
+    {
+        *TextCaps: LIST()
+    }
+}
+*CursorXAfterCR: AT_CURSOR_X_ORIGIN
+*YMoveAttributes: LIST(SEND_CR_FIRST)
+*XMoveThreshold: 0
+*YMoveThreshold: *
+*XMoveUnit: 203
+*YMoveUnit: 203
+*Command: CmdXMoveAbsolute
+{
+    *CallbackID : 100
+    *Params : LIST(DestX)
+}
+*Command: CmdYMoveRelDown
+{
+    *CallbackID : 101
+    *Params : LIST(DestYRel)
+}
+*Command: CmdCR { *Cmd : "<000D>" }
+*Command: CmdLF { *Cmd : "<000A>" }
+*Command: CmdFF { *Cmd : "<00>" }
+*OutputDataFormat: V_BYTE
+*OptimizeLeftBound?: FALSE
+*CursorXAfterSendBlockData: AT_GRXDATA_END
+*CursorYAfterSendBlockData: AUTO_INCREMENT
+*DefaultFont: 1
+*DefaultCTT: 0
+*switch: Orientation
+{
+    *case: PORTRAIT
+    {
+        *DeviceFonts: LIST(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,64,65,66,67,68,69,70,71,72,73,
++                                      74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,127,128,129,130,131,132,133,134,135,136,
++                                      137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,190,191,192,
++                                      193,194,195,196,197,198,199,200,201,202,203,204,205,206,207,208,209,210,211,212,213,214,215,216,217,218,219,220,221,222,223,224,225,226,227,
++                                      228,229,230,231,253,254,255,256,257,258,259,260,261,262,263,264,265,266,267,268,269,270,271,272,273,274,275,276,277,278,279,280,281, 282,283,
++                                      284,285,286,287,288,289,290,291,292,293,294,295,296,297,298,299,300,301,302,303,304,305,306,307,308,309,310,311,312,313,314,315,365,415, 416,
++                                      417, 418, 419, 420, 421, 422, 423, 424, 425, 426, 427, 428, 429, 430, 431, 432, 433, 434, 435, 436, 437, 438, 439, 440, 441, 442, 443, 444, 445, 446, 447,
++                                      448, 449, 450, 451, 452, 453, 454, 455, 456, 478, 479, 480, 481, 482, 483, 484, 485, 486, 487, 488, 489, 490, 491, 492, 493, 494, 495, 496, 497, 498, 499,
++                                      500, 501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 512, 513, 514, 515, 516, 517, 518, 519, 541, 542, 543, 544, 545, 546, 547, 548, 549, 550, 551,
++                                      552, 553, 554, 555, 556, 557, 558, 559, 560, 561, 562, 563, 564, 565, 566, 567, 568, 569, 570, 571, 572, 573, 574, 575, 576, 577, 578, 579, 580, 581, 582,
++                                      604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633, 634,
++                                      635, 636, 637, 638, 639, 640, 641, 642, 643, 644, 645, 667, 668, 669, 670, 671, 672, 673, 674, 675, 676, 677, 678, 679, 680, 681, 682, 683, 684, 685, 686,
++                                      687, 688, 689, 690, 691, 692, 693, 694, 695, 696, 697, 698, 699, 700, 701, 702, 703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717,
++                                      718, 719, 720, 721, 722, 723, 724, 725, 726)
+    }
+    *case: LANDSCAPE_CC270
+    {
+        *DeviceFonts: LIST()
+    }
+}
+*Command: CmdBoldOn { *Cmd : "<1B>E<01>" }
+*Command: CmdBoldOff { *Cmd : "<1B>E<00>" }
+*Command: CmdUnderlineOn { *Cmd : "<1B>-<01>" }
+*Command: CmdUnderlineOff { *Cmd : "<1B>-<00>" }

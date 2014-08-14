@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window caption="0,0,0,36" size="450,360" sizebox="6,6,6,6" mininfo="80,60">
+  <Font name="微软雅黑" size="12" bold="false" default="true" />
+  <Font name="微软雅黑" size="12" bold="false"/>
+  <Default name="Combo" value="normalimage=&quot;res='118' restype='png' source='0,0,100,22' corner='2,2,20,2'&quot; hotimage=&quot;res='118' restype='png' source='0,22,100,44' corner='2,2,22,2'&quot; focusedimage=&quot;res='118' restype='png' source='0,22,100,44' corner='2,2,22,2'&quot; pushedimage=&quot;res='118' restype='png' source='0,44,100,66' corner='2,2,22,2'&quot;" />
+  <Default name="Button" value="bkimage=&quot;res='115' restype='png' corner='5,5,5,5'&quot; hotimage=&quot;res='116' restype='png' corner='2,3,2,2'&quot; pushedimage=&quot;res='117' restype='png' corner='2,5,2,2'&quot;" />
+  <Default name="VScrollBar" value="button1normalimage=&quot;res='119' restype='png' source='0,0,16,16'&quot; button1hotimage=&quot;res='119' restype='png' source='16,0,32,16,16'&quot; button1pushedimage=&quot;res='119' restype='png' source='32,0,48,16'&quot; button2normalimage=&quot;res='119' restype='png' source='0,32,16,48'&quot; button2hotimage=&quot;res='119' restype='png' source='16,32,32,48'&quot; button2pushedimage=&quot;res='119' restype='png' source='32,32,48,48'&quot; thumbnormalimage=&quot;res='119' restype='png' source='0,48,16,64' corner='0,2,0,2'&quot; thumbhotimage=&quot;res='119' restype='png' source='16,48,32,64' corner='0,2,0,2'&quot; thumbpushedimage=&quot;res='119' restype='png' source='32,48,48,64' corner='0,2,0,2'&quot; bknormalimage=&quot;res='119' restype='png' source='0,16,16,32'&quot;" />
+  <VerticalLayout name="bg" bkimage="res='136' restype='bmp' corner='5,10,5,5'" hole="true">
+    <HorizontalLayout height="36">
+      <HorizontalLayout width="250" inset="2,2,0,0">
+        <Label bkimage="res='144' restype='bmp' mask='#FFFF00FF'" width="32" height="32"/>
+        <Label text="驱动卸载程序" textpadding="10,0,0,0"/>
+      </HorizontalLayout>
+      <HorizontalLayout />
+      <HorizontalLayout width="72">
+        <Button name="minbtn" width="28" height="19" bkimage="" normalimage="res='103' restype='png'" hotimage="res='104' restype='png'" pushedimage="res='105' restype='png'"/>
+        <Button name="closebtn" width="39" height="19" maxheight="19" maxwidth="39"  bkimage="" normalimage="res='112' restype='png'" hotimage="res='113' restype='png'" pushedimage="res='114' restype='png'"/>
+      </HorizontalLayout>
+    </HorizontalLayout>
+
+    <VerticalLayout name="body" padding="2,0,2,5">
+      <VerticalLayout padding="10,10,10,10">
+        <Text showhtml="true" text="{x 20}欢迎使用由achellies提供的驱动卸载向导！{n}{n}{x 20}{f 1}请选择将要卸载的驱动程序！{/f}"/>
+        <VerticalLayout name="driver_list" padding="10,10,10,0" vscrollbar="true" bordersize="1" bordercolor="#FF080808" inset="5,5,5,5">
+        </VerticalLayout>
+        <Label padding="10,0,0,0" visible="false" name="progress_tip" height="30" text="卸载进度："/>
+        <Progress padding="20,0,10,0" visible="false"  name="progress" bordersize="1" height="24" bordercolor="#FF0000F0"  align="center" foreimage="res='143' restype='png' corner='3,3,3,5'" min="0" max="100" value="20" hor="true" />
+      </VerticalLayout>
+      <VerticalLayout height="46">
+        <HorizontalLayout height="20" bkimage="res='141' restype='png'"/>
+        <HorizontalLayout >
+          <Control />
+          <Button name="uninstall_btn" text="卸载" width="90" height="26" />
+          <Control width="45" />
+          <Button name="select_all_btn" text="全部选择" width="90" height="26" />
+          <Control width="45" />
+          <Button name="cancel_btn" text="退出" width="90" height="26" />
+          <Control />
+        </HorizontalLayout>
+      </VerticalLayout>
+
+    </VerticalLayout>
+
+  </VerticalLayout>
+</Window>

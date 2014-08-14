@@ -1,0 +1,92 @@
+TARGETNAME=MicroDrvUI
+TARGETPATH=.\$(DDKBUILDENV)
+TARGETTYPE=DYNLINK
+
+INCLUDES=		$(INCLUDES);				\
+						.\;									\
+						..\gui;							\
+						.\res;							\
+						..\pdk;							\
+						..\wtl;							\
+						..\lua\src;					\
+						$(WDKROOT)\inc\crt;	\
+						$(WDKROOT)\inc\api;	\
+						$(DDK_INC_PATH);
+
+MSC_WARNING_LEVEL=/W3
+COMPILER_WX_SWITCH=/W3
+
+USE_ATL=1
+USE_STL=1
+
+ATL_VER=30
+STL_VER=70
+
+# We use STL 7.0, which is not available pre-Vista. We therefore set USE_LIBCMT=1
+# If STL 7.0 is not necessary, USE_MSVCRT=1 is recommended
+USE_LIBCMT=1
+
+DLLBASE=0x50000000
+
+DLLENTRY=_DllMainCRTStartup
+
+USE_OBJECT_ROOT=1
+
+#
+# ISOLATION
+#
+SXS_ASSEMBLY_NAME=YourCompanyName.YourDivision.YourApp
+SXS_ASSEMBLY_LANGUAGE_INDEPENDENT=1
+SXS_MANIFEST=MicroDrvUI.Manifest
+SXS_MANIFEST_IN_RESOURCES=1
+SXS_MANIFEST_RESOURCE_ID=2
+SXS_NO_BINPLACE=1
+
+
+#
+# ISOLATION
+#
+LINKER_FLAGS = $(LINKER_FLAGS) -ignore:4049,4217
+
+# To build version with debug output, add -DDEBUG to C_DEFINES line below
+C_DEFINES=$(C_DEFINES) -DUSERMODE_DRIVER -D_UNICODE -DUNICODE -DISOLATION_AWARE_ENABLED -DUSERMODE_DRIVER -DWIN_NT -D_WIN32 -DWINNT=1 -D_X86=1
+C_DEFINES=$(C_DEFINES) -DMANIFEST_RESOURCE=$(SXS_MANIFEST_RESOURCE_ID)
+
+
+TARGETLIBS=    	$(SDK_LIB_PATH)\kernel32.lib		\
+								$(SDK_LIB_PATH)\user32.lib			\
+								$(SDK_LIB_PATH)\winspool.lib		\
+								$(SDK_LIB_PATH)\advapi32.lib		\
+								$(SDK_LIB_PATH)\comdlg32.lib		\
+								$(SDK_LIB_PATH)\comctl32.lib		\
+								$(SDK_LIB_PATH)\gdi32.lib				\
+								$(SDK_LIB_PATH)\ole32.lib				\
+								$(SDK_LIB_PATH)\advapi32.lib		\
+								$(SDK_LIB_PATH)\Version.lib			\
+								$(SDK_LIB_PATH)\uuid.lib				\
+								$(SDK_LIB_PATH)\shell32.lib			\
+								$(SDK_LIB_PATH)\oleaut32.lib		\
+    						$(OBJ_PATH)\..\lib\$(O)\gui.lib	\
+    						$(OBJ_PATH)\..\lib\$(O)\pdk.lib	\
+    						$(OBJ_PATH)\..\lib\$(O)\lua.lib
+
+SOURCES= intrface.cpp  		\
+         dllentry.cpp  		\
+         debug.cpp     		\
+         devmode.cpp   		\
+         fusutils.cpp  		\
+         globals.cpp   		\
+         OEMUI.cpp    		\
+         DTCUIDrv.cpp  		\
+         MicroDrvUI.rc
+            
+
+!IF "$(BUILD_PASS)" == "PASS2" || "$(BUILD_PASS)" == "PASSALL"
+NTTARGETFILES=COPYDLL
+!ENDIF
+
+# Build with Vista libs but make sure sample can still run downlevel
+_NT_TARGET_VERSION=$(_NT_TARGET_VERSION_WIN2K)
+WIN32_WINNT_VERSION =$(LATEST_WIN32_WINNT_VERSION)
+NTDDI_VERSION=$(LATEST_NTDDI_VERSION)
+

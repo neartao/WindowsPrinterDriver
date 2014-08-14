@@ -1,0 +1,2 @@
+        <Button name="maxbtn" float="true" pos="28,0,56,19" width="28" height="19" maxheight="19" maxwidth="28"  normalimage="res='106' restype='png'" hotimage="res='107' restype='png'" pushedimage="res='108' restype='png'"/>
+        <Button name="restorebtn" visible="false" float="true" pos="28,0,56,19" width="28" height="19" maxheight="19" maxwidth="28"  normalimage="res='109' restype='png'" hotimage="res='110' restype='png'" pushedimage="res='111' restype='png'"/>

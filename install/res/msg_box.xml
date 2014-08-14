@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window size="360,150" caption="0,0,0,40"  roundcorner="4,4,4,4">
+  <Font name="微软雅黑" size="12" bold="false" default="true" />
+  <Font name="微软雅黑" size="12" bold="false"/>
+  <HorizontalLayout name="bg" bkimage="res='136' restype='bmp' corner='5,10,5,5'">
+	<VerticalLayout>
+		<HorizontalLayout height="36">
+      <HorizontalLayout width="240" inset="2,4,0,0">
+        <Label bkimage="res='139' restype='bmp' mask='#FFFF00FF'" width="32" height="32"/>
+        <Label name="apptitle" textpadding="10,0,0,0" showhtml="true" text="对话框"/>
+      </HorizontalLayout>
+			<VerticalLayout />
+			<VerticalLayout width="48">
+				<Button name="closebtn" width="39" height="19" maxheight="19" maxwidth="39"  normalimage="res='112' restype='png'" hotimage="res='113' restype='png'" pushedimage="res='114' restype='png'"/>
+			</VerticalLayout>
+		</HorizontalLayout>
+		<VerticalLayout bkimage="add_user_m_bg.png" inset="15,15,15,10">
+			<VerticalLayout>
+        <RichEdit name="message" font="1" enabled="false" rich="false" vscrollbar="true" readonly="true"/>
+			</VerticalLayout>
+			<HorizontalLayout name="buttons" height="40" inset="10,10,10,0">
+			</HorizontalLayout>
+		</VerticalLayout>
+	</VerticalLayout>
+</HorizontalLayout>
+</Window>

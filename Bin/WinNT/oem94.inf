@@ -1,0 +1,90 @@
+
+[Version]
+Signature="$Windows NT$"
+Provider=%Prov%
+ClassGUID={4D36E979-E325-11CE-BFC1-08002BE10318}
+Class=Printer
+;DriverVer=01/15/2008,1.581.0.1
+;CatalogFile=CBM1KII.cat
+
+[ClassInstall32.NT]
+AddReg=printer_class_addreg
+
+[printer_class_addreg]
+HKR,,,,%PrinterClassName%
+HKR,,Icon,,"-4"
+HKR,,Installer32,,"ntprint.dll,ClassInstall32"
+HKR,,NoDisplayClass,,1
+HKR,,EnumPropPages32,,"printui.dll,PrinterPropPageProvider"
+
+;
+; Manufacturer section.
+;
+; This section lists all of the manufacturers
+; that we will display in the Dialog box
+;
+
+[Manufacturer]
+"Microdrv"=Microdrv
+
+;
+; Model Specifications Section
+;
+
+[Microdrv]
+%PrinterName% = PRINTER.DRV, USBPRINT\Microdrv
+%PrinterName% = PRINTER.DRV, LPTENUM\Microdrv
+
+;
+; Installer section(s) referenced above.
+;
+
+[PRINTER.DRV]
+CopyFiles=@Microdrv.Dll,@Microdrv.GPD,@UnidrvPlug.ini,@Microdrv.HLP,OEMUNI
+DataSection=UNIDRV_DATA
+DataFile=Microdrv.GPD
+Include=NTPRINT.INF
+Needs=UNIDRV.OEM
+AddReg=PRINTER_addreg
+
+
+[PRINTER_addreg]
+HKLM,%root_printer_key%,UpsideDown,0x00010001,0x01
+HKLM,%root_printer_key%,Cutter,0x00010001,0x01
+HKLM,%root_printer_key%,CashDrawers,0x00010001,0x02
+HKLM,%root_printer_key%,Buzzer,0x00010001,0x01
+HKLM,%root_printer_key%,Barcode,0x00010001,0x01
+HKLM,%root_printer_key%,Logo,0x00010001,0x01
+HKLM,%root_printer_key%,PrinterType,0x00010001,0x02
+HKLM,%root_printer_key%,LabelPrinter,0x00010004,0x00
+
+;The Default value for Cutter mode is Cut/Cut equivalent to Partial/Partial
+HKLM,%root_printer_key%,CutterMode_default,0x00010001,0x05
+;The Default value for Drawer mode
+HKLM,%root_printer_key%,DrawerMode1_default,0x00010001,0x00320002
+HKLM,%root_printer_key%,DrawerMode2_default,0x00010001,0x00320000
+
+[DestinationDirs]
+DefaultDestDir=66000
+
+[SourceDisksNames.x86]
+1 = %disk1%,,,\
+
+[SourceDisksFiles]
+Microdrv.Dll = 1
+MicrodrvUNI.Dll = 1
+MicrodrvUI.DLL = 1
+UnidrvPlug.ini = 1
+Microdrv.hlp = 1
+Microdrv.GPD = 1
+
+[Strings]
+PrinterClassName="Printers"
+Prov="Microdrv"
+disk1="Microdrv Printer Driver Setup Disk"
+root_printer_key="SOFTWARE\\CBM\\PRINTER\\INITIAL_CONFIG"
+PrinterName="Microdrv"
+
+[OEMUNI]
+MicrodrvUNI.dll
+MicrodrvUI.dll

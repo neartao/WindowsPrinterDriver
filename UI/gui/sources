@@ -1,0 +1,73 @@
+!IF 0
+
+Copyright (c) 2005 Microsoft Corporation
+
+All rights reserved.
+
+THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
+ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO
+THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
+PARTICULAR PURPOSE.
+
+Module Name:
+
+    sources
+
+Abstract:
+
+    This file specifies the target component being built and the list of
+    sources files needed to build that component.  Also specifies optional
+    compiler switches and libraries that are unique for the component being
+    built.
+
+!ENDIF
+
+TARGETNAME=gui
+TARGETPATH=$(OBJ_PATH)\..\lib\$(_OBJ_DIR)
+TARGETTYPE=LIBRARY
+
+PRECOMPILED_CXX=0
+
+USE_ATL=1
+USE_STL=1
+
+ATL_VER=30
+STL_VER=70
+
+# We use STL 7.0, which is not available pre-Vista. We therefore set USE_LIBCMT=1
+# If STL 7.0 is not necessary, USE_MSVCRT=1 is recommended
+USE_LIBCMT=1
+
+USE_NATIVE_EH=1
+
+MSC_WARNING_LEVEL=/W3 /WX
+
+#
+# To build version with debug output, add -DDEBUG to C_DEFINES line below
+#
+C_DEFINES=$(C_DEFINES) -DUSERMODE_DRIVER -D_UNICODE -DUNICODE -DISOLATION_AWARE_ENABLED -DUSERMODE_DRIVER -DWIN_NT -D_WIN32 -DWINNT=1 -D_X86=1
+
+
+INCLUDES=		$(INCLUDES);   			\
+    				.\;                 \
+    				..\;								\
+    				..\com;							\
+    				..\wtl;             \
+    				..\pdk;							\
+    				..\lua\src;					\
+    				$(DDK_INC_PATH);  
+
+SOURCES= AboutDg.cpp  		\
+         BarcodeDg.cpp  	\
+         DebugDg.cpp  		\
+         DownloadDg.cpp		\
+         LayoutDg.cpp			\
+         MaxiCodeDg.cpp		\
+         OperationDg.cpp	\
+         PDF417Dg.cpp			\
+         QRCodeDg.cpp			\
+         SettingDg.cpp		\
+         UtilityDg.cpp		\
+         WatermarkDg.cpp
+
+

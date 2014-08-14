@@ -1,0 +1,81 @@
+BUILD: Computing Include file dependencies:
+BUILD: Examining e:\project\microdrv\gpd directory tree for files to compile.
+before AssemblyIdentity_AfterReadAllSources
+after AssemblyIdentity_AfterReadAllSources
+skipping post pass 0 command
+Compiling e:\project\microdrv\gpd\w2k *************
+'nmake.exe /nologo BUILDMSG=Stop. -i BUILD_PASS=PASS1 NOLINK=1 NOPASS0=1 MAKEDIR_RELATIVE_TO_BASEDIR= MAKEDIR_LOWERCASE=e:\project\microdrv\gpd\w2k'
+BUILDMSG: _NT_TARGET_VERSION SET TO WINXP
+    rc -l 409 -DSXS_PROCESSOR_ARCHITECTURE="""x86"""  -DSXS_TARGET="""Microdrv.dll"""   -DSYSTEM_COMPATIBLE_ASSEMBLY_NAME="""Microsoft.Windows.SystemCompatible"""  -DLSYSTEM_COMPATIBLE_ASSEMBLY_NAME=L"""Microsoft.Windows.SystemCompatible"""   -DSXS_ASSEMBLY_VERSION=""""""  -c 936 /r /fo objfre_wxp_x86\i386\microdrv.res /D_X86_=1 /Di386=1  /DSTD_CALL /DCONDITION_HANDLING=1   /DNT_INST=0 /DWIN32=100 /D_NT1X_=100 /DWINNT=1 /D_WIN32_WINNT=0x0501 /DWINVER=0x0501 /D_WIN32_IE=0x0603    /DWIN32_LEAN_AND_MEAN=1 /DDEVL=1 /D__BUILDMACHINE__=WinDDK /DFPO=0  /DNDEBUG /DNDEBUG  -DUNICODE /DNTDDI_VERSION=0x05010200   /I..\..\..\..\..\inc /Ie:\project\microdrv\gpd\w2k\objfre_wxp_x86\i386 /ID:\WinDDK\6000\inc\api /ID:\WinDDK\6000\inc\api /ID:\WinDDK\6000\inc\crt .\microdrv.rc
+Microsoft (R) Windows (R) Resource Compiler Version 6.0.5724.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+	link.exe /out:objfre_wxp_x86\i386\Microdrv.dll /machine:ix86 @C:\DOCUME~1\Allan\LOCALS~1\Temp\nmA1.tmp
+Microsoft (R) Incremental Linker Version 8.00.50727.220
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+/MERGE:_PAGE=PAGE 
+/MERGE:_TEXT=.text 
+/SECTION:INIT,d 
+/OPT:REF 
+/OPT:ICF 
+/IGNORE:4198,4010,4037,4039,4065,4070,4078,4087,4089,4221 
+/INCREMENTAL:NO 
+/FULLBUILD 
+/NODEFAULTLIB 
+/WX 
+/debug:NONE 
+/debugtype:cv 
+/version:6.0 
+/osversion:6.0 
+/functionpadmin:5 
+/safeseh 
+/debug 
+/debugtype:cv,fixup 
+/opt:nowin98 
+/merge:.rdata=.text 
+/pdbcompress 
+/STACK:0x40000,0x1000 
+/dll 
+/base:0x20000000 
+/subsystem:windows,5.01 
+/noentry 
+objfre_wxp_x86\i386\microdrv.res 
+d:\winddk\6000\lib\wxp\i386\int64.lib 
+d:\winddk\6000\lib\wxp\i386\sehupd.lib 
+Linking e:\project\microdrv\gpd\w2k *************
+'nmake.exe /nologo BUILDMSG=Stop. -i BUILD_PASS=PASS2 LINKONLY=1 NOPASS0=1 MAKEDLL=1 MAKEDIR_RELATIVE_TO_BASEDIR= MAKEDIR_LOWERCASE=e:\project\microdrv\gpd\w2k'
+BUILDMSG: _NT_TARGET_VERSION SET TO WINXP
+	link.exe /out:objfre_wxp_x86\i386\Microdrv.dll /machine:ix86 @C:\DOCUME~1\Allan\LOCALS~1\Temp\nmA3.tmp
+Microsoft (R) Incremental Linker Version 8.00.50727.220
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+/MERGE:_PAGE=PAGE 
+/MERGE:_TEXT=.text 
+/SECTION:INIT,d 
+/OPT:REF 
+/OPT:ICF 
+/IGNORE:4198,4010,4037,4039,4065,4070,4078,4087,4089,4221 
+/INCREMENTAL:NO 
+/FULLBUILD 
+/NODEFAULTLIB 
+/WX 
+/debug:NONE 
+/debugtype:cv 
+/version:6.0 
+/osversion:6.0 
+/functionpadmin:5 
+/safeseh 
+/debug 
+/debugtype:cv,fixup 
+/opt:nowin98 
+/merge:.rdata=.text 
+/pdbcompress 
+/STACK:0x40000,0x1000 
+/dll 
+/base:0x20000000 
+/subsystem:windows,5.01 
+/noentry 
+objfre_wxp_x86\i386\microdrv.res 
+d:\winddk\6000\lib\wxp\i386\int64.lib 
+d:\winddk\6000\lib\wxp\i386\sehupd.lib 
